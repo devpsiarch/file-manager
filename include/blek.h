@@ -14,12 +14,13 @@ private:
         resized = 1;
     }
     bool should_close;
+    Win* browser_win;
 public:
     unsigned int LINES;
     unsigned int COLS;
     blek();
-    void populate();
-    void render();
+    void populate_browser();
+    void render_browser_win();
     void input();
     void interactive();
     ~blek();
