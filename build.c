@@ -20,10 +20,10 @@ int main(int argc,char*argv[]){
     tester.appendcc(&tester,"g++");
     tester.appendtarget(&tester,"main");
     tester.appendsrcs(&tester,"main.cpp");
+    tester.appendsrcs(&tester,"source/blek.cpp");
+    tester.appendsrcs(&tester,"source/Win.cpp");
     tester.appendflags(&tester,"-Wall");
     tester.appendflags(&tester,"-Wextra");
-    tester.appendflags(&tester,"-fsanitize=address");
-    tester.appendflags(&tester,"-fsanitize-address-use-after-scope");
     tester.appendflags(&tester,"-lncurses");
     tester.appendflags(&tester,"-o");
 
