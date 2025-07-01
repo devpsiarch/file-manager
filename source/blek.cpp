@@ -54,9 +54,9 @@ void blek::input(){
     int c = getch();
     switch(c){
         case KEY_DOWN:
-            if(this->top_line >= this->items.size()-this->cursor) break;
+            if(this->top_line >= this->items.size()-1-this->cursor) break;
             if(this->cursor < items.size()-1){
-                if(this->cursor >= LINES){
+                if(this->cursor >= LINES-1){
                     clear();
                     this->top_line++;
                 }else this->cursor++;
@@ -74,8 +74,9 @@ void blek::input(){
             // we populate again
             // execute cd command , 
             // populate
-            if(this->items[cursor].type != std::filesystem::file_type::directory) break;
-            chdir(items[cursor].name.c_str());
+            size_t target = this->top_line + this->cursor;
+            if(this->items[target].type != std::filesystem::file_type::directory) break;
+            chdir(items[target].name.c_str());
             if(this->items.size() > 2){
                 this->items.erase(this->items.begin()+2,this->items.end());
             }
