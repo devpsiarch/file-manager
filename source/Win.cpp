@@ -7,7 +7,7 @@ Win::Win(int sx,int sy,int h,int w){
     this->ptr = newwin(h,w,sy,sx);
     keypad(this->ptr,TRUE);
     nodelay(this->ptr,TRUE);
-    wtimeout(this->ptr,10);
+    wtimeout(this->ptr,100);
 }
 Win::Win(const Win&other){
     this->startx = other.startx;

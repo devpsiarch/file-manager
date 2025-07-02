@@ -4,8 +4,8 @@
 #include <sys/stat.h>
 class Win {
 public:
-    int startx,starty;
-    int height,width;
+    unsigned int startx,starty;
+    unsigned int height,width;
     WINDOW* ptr;
     Win(int sx,int sy,int h,int w);
     Win(const Win&other);

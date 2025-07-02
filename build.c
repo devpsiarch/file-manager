@@ -25,6 +25,8 @@ int main(int argc,char*argv[]){
     tester.appendflags(&tester,"-Wall");
     tester.appendflags(&tester,"-Wextra");
     tester.appendflags(&tester,"-lncurses");
+    tester.appendflags(&tester,"-fsanitize=address");
+    tester.appendflags(&tester,"-fsanitize-address-use-after-scope");
     tester.appendflags(&tester,"-o");
 
     tester.construct(&tester);
